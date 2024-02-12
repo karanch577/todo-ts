@@ -33,6 +33,7 @@ export default function Home() {
   const onSubmit = async (values: z.infer<typeof formSchema>) => {
     const res = await fetch("http://localhost:8000/api/todo/add", {
       method: "POST",
+      credentials: "include",
       headers: {
         "Content-Type": 'application/json'
       },

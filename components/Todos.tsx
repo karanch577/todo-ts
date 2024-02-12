@@ -6,7 +6,8 @@ function Todos() {
     const addTodos = useTodoStore(state => state.addTodos)
     async function getTodos() {
         const res = await fetch("http://localhost:8000/api/todo/all", {
-            method: "GET"
+            method: "GET",
+            credentials: "include"
           })
 
           const data = await res.json()
